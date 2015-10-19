@@ -1,0 +1,20 @@
+# Ignore everything
+*
+
+##############
+#  Whitelist #
+##############
+!.gitignore
+!.gitmodules
+
+# vim
+!.vimrc
+!.vim/bundle/
+
+# tmux
+!.tmux.conf
+!.tmux/plugins/
+
+# bash
+!.bashrc
+!.bash_profile
