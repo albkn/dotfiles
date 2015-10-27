@@ -16,3 +16,12 @@
 [submodule ".vim/bundle/vim-colors-tomorrow"]
 	path = .vim/bundle/vim-colors-tomorrow
 	url = https://github.com/chriskempson/vim-tomorrow-theme.git
+[submodule ".vim/bundle/vim-colors-gotham"]
+	path = .vim/bundle/vim-colors-gotham
+	url = https://github.com/whatyouhide/vim-gotham.git
+[submodule ".vim/bundle/vim-colors-molokai"]
+	path = .vim/bundle/vim-colors-molokai
+	url = https://github.com/tomasr/molokai.git
+[submodule ".vim/bundle/vim-colors-dracula"]
+	path = .vim/bundle/vim-colors-dracula
+	url = https://github.com/zenorocha/dracula-theme.git
