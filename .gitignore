@@ -7,6 +7,9 @@
 !.gitignore
 !.gitmodules
 
+# bash
+!.bash_custom
+
 # vim
 !.vimrc
 !.vim/bundle/
@@ -15,6 +18,3 @@
 !.tmux.conf
 !.tmux/plugins/
 
-# bash
-!.bashrc
-!.bash_profile
