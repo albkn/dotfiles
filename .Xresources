@@ -1,0 +1,40 @@
+! Set default font
+xterm*faceName: Menlo
+xterm*faceSize: 10
+
+! Default to 256color termName
+xterm*termName: xterm-256color
+
+! Every shell is a login shell by default (for inclusion of all necessary environment variables)
+xterm*loginshell: true
+
+! Set scrollback
+xterm*savelines: 500
+
+! Molokai theme
+xterm*background: #101010
+xterm*foreground: #d0d0d0
+xterm*cursorColor: #d0d0d0
+xterm*color0: #101010
+xterm*color1: #960050
+xterm*color2: #66aa11
+xterm*color3: #c47f2c
+xterm*color4: #30309b
+xterm*color5: #7e40a5
+xterm*color6: #3579a8
+xterm*color7: #9999aa
+xterm*color8: #303030
+xterm*color9: #ff0090
+xterm*color10: #80ff00
+xterm*color11: #ffba68
+xterm*color12: #5f5fee
+xterm*color13: #bb88dd
+xterm*color14: #4eb4fa
+xterm*color15: #d0d0d0
+
+! Set right hand side scrollbar
+xterm*rightScrollBar: true
+xterm*ScrollBar: true
+
+! Stop output to terminal from jumping down to bottom of scroll again
+xterm*scrollTtyOutput: false
