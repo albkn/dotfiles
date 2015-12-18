@@ -1,2 +1,5 @@
 # Set prompt style
 export PS1='\[\033[1;31m\]\u@\h\[\033[0m\] in \[\033[0;32m\]\w\[\033[0m\] \$ '
+
+# Use Vim keybindings
+set -o vi
