@@ -2,13 +2,16 @@
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 
+" Default utf8 and 256 colors 
+set encoding=utf-8  " Set utf8
+set t_Co=256        " Set 256 color
+
 " Default syntax
 syntax on
 set background=dark
 colors solarized
 
 " General
-set encoding=utf-8  " Set utf8 as default
 set number          " Show line numbers
 set ruler           " Show row and column ruler information
 set cmdheight=2     " Command line height
