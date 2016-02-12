@@ -1,6 +1,28 @@
-"" Load pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+""" Load Vundle
+set nocompatible              " be iMproved, required
+filetype off                  " required
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+""" Vim plugins via Vundle
+Plugin 'scrooloose/nerdtree'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'easymotion/vim-easymotion'
+" themes
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/vim-tomorrow-theme'
+Plugin 'whatyouhide/vim-gotham'
+Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+""" End Vundle
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+
 
 " Default utf8 and 256 colors 
 set encoding=utf-8  " Set utf8
@@ -32,7 +54,7 @@ set showbreak=\ \   " Wrap-broken line prefix
 
 " Margin guide - 80 characters
 set colorcolumn=80  " Put a line-length marker
-hi ColorColumn ctermbg=0 guibg=0
+hi ColorColumn ctermbg=gray guibg=gray
 
 " Backspace options
 set backspace=indent,eol,start  " Backspace behaviour
@@ -63,3 +85,6 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Remap NERDTreeToggle to CTRL+\
 map <C-\> :NERDTreeToggle<CR>
+
+""" CtrlP
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
