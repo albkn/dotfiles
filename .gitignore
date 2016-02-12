@@ -5,15 +5,15 @@
 #  Whitelist #
 ##############
 !.gitignore
-!.gitmodules
 
 # bash
 !.bash_custom
+
 # vim
 !.vimrc
-!.vim/bundle/
+
 # tmux
 !.tmux.conf
-!.tmux/plugins/
+
 # Xresources (for xterm)
 !.Xresources

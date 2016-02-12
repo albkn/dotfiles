@@ -1,29 +1,39 @@
-""" Load Vundle
+"""""""""" VUNDLE
+" initialize, set the runtime path to include Vundle and initialize
 set nocompatible              " be iMproved, required
 filetype off                  " required
-" set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
 """ Vim plugins via Vundle
+Plugin 'VundleVim/Vundle.vim' " required
 Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'easymotion/vim-easymotion'
-" themes
+""" Vim themes via Vundle
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
-""" End Vundle
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
+" end initialization
+call vundle#end()             " required
+filetype plugin indent on     " required
+"filetype plugin on " use this instead to ignore plugin indent changes
 
 
+"""""""""" PLUGIN SETTINGS
+""" NERDTree
+" Auto open NERDTree only if vim is open without arguments
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Remap NERDTreeToggle to CTRL+\
+map <C-\> :NERDTreeToggle<CR>
+""" CtrlP
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+
+"""""""""" VIM SETTINGS
 " Default utf8 and 256 colors 
 set encoding=utf-8  " Set utf8
 set t_Co=256        " Set 256 color
@@ -79,12 +89,3 @@ set nobackup
 set nowb
 set noswapfile
    
-""" NERDTree
-" Auto open NERDTree only if vim is open without arguments
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" Remap NERDTreeToggle to CTRL+\
-map <C-\> :NERDTreeToggle<CR>
-
-""" CtrlP
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
