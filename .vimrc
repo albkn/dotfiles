@@ -30,6 +30,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Remap NERDTreeToggle to CTRL+\
 map <C-\> :NERDTreeToggle<CR>
 """ CtrlP
+" Set no max file limit
+let g:ctrlp_max_files = 0
+" Search from current dir, instead of project root
+let g:ctrlp_working_path_mode = 0
+" Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
 
