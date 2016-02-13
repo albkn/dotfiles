@@ -53,6 +53,7 @@ set number          " Show line numbers
 set ruler           " Show row and column ruler information
 set cmdheight=2     " Command line height
 set undolevels=500  " Number of undo levels
+set updatetime=1000 " Lengths use by some plugins before triggering update
 
 " Indentations 
 set autoindent      " Auto-indent new lines
