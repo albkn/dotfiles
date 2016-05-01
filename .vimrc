@@ -7,6 +7,7 @@ call vundle#begin()
 """ Vim plugins via Vundle
 Plugin 'VundleVim/Vundle.vim' " required
 Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -16,6 +17,11 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+Plugin 'tomasr/molokai'
+Plugin 'joshdick/onedark.vim'
+Plugin 'jdkanani/vim-material-theme'
+Plugin '29decibel/codeschool-vim-theme'
+Plugin 'jpo/vim-railscasts-theme'
 " end initialization
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -29,6 +35,15 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Remap NERDTreeToggle to CTRL+\
 map <C-\> :NERDTreeToggle<CR>
+""" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
 """ CtrlP
 " Set no max file limit
 let g:ctrlp_max_files = 0
