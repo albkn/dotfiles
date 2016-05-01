@@ -8,19 +8,17 @@ Simple config dotfiles for bash, vim, etc
     $ cd ~
     ```
     
-2. 'Clone' from the repo  
+2. Clone from the repo to `.dotfiles` diretory  
 
     ```shell
-    $ git init  
-    $ git remote add origin https://github.com/morcerf/dotfiles.git  
-    $ git fetch  
-    $ git checkout -t origin/master  `
+    $ git clone https://github.com/morcerf/dotfiles .dotfiles
     ```
     
-3. Remove `.git` folder  
+3. Go into the directory and run the script
 
     ```shell
-    $ rm -r .git
+    $ cd ~/.dotfiles
+    $ ./dotfiles.sh
     ```
     
 4. Initialize vim and tmux plugins using Vundle and tpm respectively  
