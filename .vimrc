@@ -8,9 +8,10 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' " required
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-unimpaired'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
 """ Vim themes via Vundle
 Plugin 'altercation/vim-colors-solarized'
@@ -36,12 +37,9 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Remap NERDTreeToggle to CTRL+\
 map <C-\> :NERDTreeToggle<CR>
 """ Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_always_populate_loc_list = 0
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 """ CtrlP
@@ -61,7 +59,7 @@ set t_Co=256        " Set 256 color
 " Default syntax
 syntax on
 set background=dark
-colors solarized
+colors dracula
 
 " General
 set number          " Show line numbers
@@ -86,6 +84,15 @@ set showbreak=\ \   " Wrap-broken line prefix
 " Margin guide - 80 characters
 set colorcolumn=80  " Put a line-length marker
 hi ColorColumn ctermbg=gray guibg=gray
+
+" Status line formatting
+set statusline=[%n]\ %f
+set statusline+=%=
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=\ 
+set statusline+=%l:%c
 
 " Backspace options
 set backspace=indent,eol,start  " Backspace behaviour
