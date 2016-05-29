@@ -19,6 +19,7 @@ Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
 Plugin 'tomasr/molokai'
+Plugin 'sickill/vim-monokai'
 Plugin 'joshdick/onedark.vim'
 Plugin 'jdkanani/vim-material-theme'
 Plugin '29decibel/codeschool-vim-theme'
@@ -59,7 +60,7 @@ set t_Co=256        " Set 256 color
 " Default syntax
 syntax on
 set background=dark
-colors dracula
+colors monokai
 
 " General
 set number          " Show line numbers
