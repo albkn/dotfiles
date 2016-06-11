@@ -8,11 +8,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim' " required
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-unimpaired'
+Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 """ Vim themes via Vundle
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
@@ -41,7 +42,7 @@ map <C-\> :NERDTreeToggle<CR>
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_javascript_checkers = ['eslint']
 """ CtrlP
 " Set no max file limit
@@ -50,6 +51,9 @@ let g:ctrlp_max_files = 0
 let g:ctrlp_working_path_mode = 0
 " Ignore files in .gitignore
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+""" Fzf
+" Respects .gitignore
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 
 
 """""""""" VIM SETTINGS
