@@ -18,7 +18,7 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'whatyouhide/vim-gotham'
-Plugin 'zenorocha/dracula-theme', {'rtp': 'vim/'}
+Plugin 'zenorocha/dracula-theme', { 'rtp': 'vim/' }
 Plugin 'tomasr/molokai'
 Plugin 'sickill/vim-monokai'
 Plugin 'joshdick/onedark.vim'
@@ -50,7 +50,9 @@ let g:ctrlp_max_files = 0
 " Search from current dir, instead of project root
 let g:ctrlp_working_path_mode = 0
 " Ignore files in .gitignore
-let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+" Use Ag for faster search
+let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 """ Fzf
 " Respects .gitignore
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
@@ -69,17 +71,20 @@ colors monokai
 " General
 set number          " Show line numbers
 set ruler           " Show row and column ruler information
-set cmdheight=2     " Command line height
-set undolevels=500  " Number of undo levels
+set cursorline      " Show horizontal line on current line
+set wildmenu        " Show visual autocomplete for command menu
+set lazyredraw      " Redraw screen only when need to
 set updatetime=1000 " Lengths use by some plugins before triggering update
+set undolevels=500  " Number of undo levels
 
 " Indentations 
 set autoindent      " Auto-indent new lines
 set smartindent     " Enable smart-indent
 set expandtab       " Use spaces instead of tabs
 set smarttab        " Enable smart-tabs
-set shiftwidth=2    " Number of auto-indent spaces
+set tabstop=2       " Number of virtual spaces per tab
 set softtabstop=2   " Number of spaces per Tab
+set shiftwidth=2    " Number of auto-indent spaces
 
 " Wraps and line breaks
 set wrap            " Wrap lines
@@ -88,9 +93,16 @@ set showbreak=\ \   " Wrap-broken line prefix
 
 " Margin guide - 80 characters
 set colorcolumn=80  " Put a line-length marker
-hi ColorColumn ctermbg=gray guibg=gray
+hi ColorColumn ctermbg=Gray guibg=Gray
 
-" Status line formatting
+" Tab line settings
+hi TabLineFill ctermbg=DarkGray ctermfg=DarkGray
+hi TabLine ctermbg=DarkGray ctermfg=Black cterm=NONE
+hi TabLineSel ctermbg=Gray ctermfg=White
+hi Title ctermfg=White ctermbg=None
+
+" Status line settings
+set laststatus=2    " Always on
 set statusline=[%n]\ %f
 set statusline+=%=
 set statusline+=%#warningmsg#
@@ -98,6 +110,10 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=\ 
 set statusline+=%l:%c
+
+" Command line settings
+set showcmd         " Show command in bottom bar
+set cmdheight=1     " Command line height
 
 " Backspace options
 set backspace=indent,eol,start  " Backspace behaviour
