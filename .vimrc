@@ -93,7 +93,7 @@ set showbreak=\ \   " Wrap-broken line prefix
 
 " Margin guide - 80 characters
 set colorcolumn=80  " Put a line-length marker
-hi ColorColumn ctermbg=Gray guibg=Gray
+hi ColorColumn ctermbg=237 guibg=#3c3d37
 
 " Tab line settings
 hi TabLineFill ctermbg=DarkGray ctermfg=DarkGray
