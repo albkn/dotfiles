@@ -78,10 +78,10 @@ set updatetime=1000 " Lengths use by some plugins before triggering update
 set undolevels=500  " Number of undo levels
 
 " Indentations 
+set smarttab        " Enable smart-tabs
+set expandtab       " Use spaces instead of tabs
 set autoindent      " Auto-indent new lines
 set smartindent     " Enable smart-indent
-set expandtab       " Use spaces instead of tabs
-set smarttab        " Enable smart-tabs
 set tabstop=2       " Number of virtual spaces per tab
 set softtabstop=2   " Number of spaces per Tab
 set shiftwidth=2    " Number of auto-indent spaces
@@ -91,15 +91,20 @@ set wrap            " Wrap lines
 set linebreak       " Break lines at word (requires Wrap lines)
 set showbreak=\ \   " Wrap-broken line prefix
 
+" Folding
+set foldenable        " Enable folding
+set foldmethod=indent " Fold based on indentation level
+set foldlevelstart=1  " Start with fold level 3 on new buffer
+
 " Margin guide - 80 characters
 set colorcolumn=80  " Put a line-length marker
 hi ColorColumn ctermbg=237 guibg=#3c3d37
 
 " Tab line settings
 hi TabLineFill ctermbg=DarkGray ctermfg=DarkGray
-hi TabLine ctermbg=DarkGray ctermfg=Black cterm=NONE
-hi TabLineSel ctermbg=Gray ctermfg=White
-hi Title ctermfg=White ctermbg=None
+hi TabLine ctermbg=DarkGray ctermfg=15 cterm=None
+hi TabLineSel ctermbg=Black ctermfg=15 cterm=None
+hi Title ctermfg=15 ctermbg=None cterm=None
 
 " Status line settings
 set laststatus=2    " Always on
@@ -113,7 +118,7 @@ set statusline+=%l:%c
 
 " Command line settings
 set showcmd         " Show command in bottom bar
-set cmdheight=1     " Command line height
+set cmdheight=2     " Command line height
 
 " Backspace options
 set backspace=indent,eol,start  " Backspace behaviour
