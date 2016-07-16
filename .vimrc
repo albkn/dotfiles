@@ -19,12 +19,9 @@ Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'whatyouhide/vim-gotham'
 Plugin 'zenorocha/dracula-theme', { 'rtp': 'vim/' }
-Plugin 'tomasr/molokai'
 Plugin 'sickill/vim-monokai'
 Plugin 'joshdick/onedark.vim'
 Plugin 'jdkanani/vim-material-theme'
-Plugin '29decibel/codeschool-vim-theme'
-Plugin 'jpo/vim-railscasts-theme'
 " end initialization
 call vundle#end()             " required
 filetype plugin indent on     " required
@@ -42,7 +39,7 @@ map <C-\> :NERDTreeToggle<CR>
 let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
+let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 """ CtrlP
 " Set no max file limit
