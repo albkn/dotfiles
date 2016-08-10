@@ -1,26 +1,42 @@
 #!/bin/sh
 
 base_dir=".dotfiles"
+files=(
+    '.gitconfig'
+    '.bash_custom'
+    '.tmux.conf'
+    '.vimrc'
+    '.Xresources'
+    '.Brewfile'
+    '.config/nvim/init.vim'
+    '.config/nvim/ftplugin/javascript.vim'
+    '.config/nvim/ftplugin/json.vim'
+)
 
 try_link_file() {
     path="$1"
-    if [ ! -e ~/"$path" ]; then
+    if [ ! -e ~/"$path" ]
+    then
         ln -s "$base_dir/$path" ~/"$path" && echo "$path linked"
     fi
 }
 
+try_unlink_file() {
+    path="$1"
+    if [ -h ~/"$path" ]
+    then
+        rm ~/"$path" && echo "$path unlinked"
+    fi
+}
+
 if [ "$1" = "link" ]; then
-    try_link_file ".gitconfig"
-    try_link_file ".bash_custom"
-    try_link_file ".tmux.conf"
-    try_link_file ".vimrc"
-    try_link_file ".Xresources"
-    try_link_file ".Brewfile"
+    for file in ${files[@]}
+    do
+        try_link_file "$file"
+    done
 elif [ "$1" = "unlink" ]; then
-  test -h ~/.gitconfig && rm ~/.gitconfig
-  test -h ~/.bash_custom && rm ~/.bash_custom
-  test -h ~/.tmux.conf && rm ~/.tmux.conf
-  test -h ~/.vimrc && rm ~/.vimrc
-  test -h ~/.Xresources && rm ~/.Xresources
-  test -h ~/.Brewfile && rm ~/.Brewfile
+    for file in ${files[@]}
+    do
+        try_unlink_file "$file"
+    done
 fi
