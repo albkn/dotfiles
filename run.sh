@@ -12,10 +12,19 @@ files=(
     '.config/nvim/ftplugin/json.vim'
 )
 
+ensure_directory() {
+    dir_path="$1"
+    if [ ! -d "$dir_path" ]
+    then
+        mkdir -p $dir_path && echo "$dir_path created"
+    fi
+}
+
 try_link_file() {
     path="$1"
     if [ ! -e ~/"$path" ]
     then
+        ensure_directory `dirname ~/"$path"`
         ln -s "`pwd`/$path" ~/"$path" && echo "$path linked"
     fi
 }
