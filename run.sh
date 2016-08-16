@@ -1,6 +1,5 @@
 #!/bin/sh
 
-base_dir=".dotfiles"
 files=(
     '.gitconfig'
     '.bash_custom'
@@ -17,7 +16,7 @@ try_link_file() {
     path="$1"
     if [ ! -e ~/"$path" ]
     then
-        ln -s "$base_dir/$path" ~/"$path" && echo "$path linked"
+        ln -s "`pwd`/$path" ~/"$path" && echo "$path linked"
     fi
 }
 
