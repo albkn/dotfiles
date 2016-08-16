@@ -18,7 +18,7 @@ Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'chriskempson/vim-tomorrow-theme'
 Plugin 'whatyouhide/vim-gotham'
-Plugin 'zenorocha/dracula-theme', { 'rtp': 'vim/' }
+Plugin 'dracula/vim'
 Plugin 'sickill/vim-monokai'
 Plugin 'joshdick/onedark.vim'
 Plugin 'jdkanani/vim-material-theme'
