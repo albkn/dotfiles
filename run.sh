@@ -22,18 +22,23 @@ ensure_directory() {
 
 try_link_file() {
     path="$1"
-    if [ ! -e ~/"$path" ]
+    source_file="`pwd`/$path"
+    target_file=~/"$path"
+
+    if [ ! -e "$target_file" ]
     then
-        ensure_directory `dirname ~/"$path"`
-        ln -s "`pwd`/$path" ~/"$path" && echo "$path linked"
+        ensure_directory `dirname "$target_file"`
+        ln -s "$source_file" "$target_file" && echo "$path linked"
     fi
 }
 
 try_unlink_file() {
     path="$1"
-    if [ -h ~/"$path" ]
+    target_file=~/"$path"
+
+    if [ -L "$target_file" ]
     then
-        rm ~/"$path" && echo "$path unlinked"
+        rm "$target_file" && echo "$path unlinked"
     fi
 }
 
