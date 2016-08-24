@@ -1,31 +1,24 @@
-"""""""""" VUNDLE
-" initialize, set the runtime path to include Vundle and initialize
-set nocompatible              " be iMproved, required
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-""" Vim plugins via Vundle
-Plugin 'VundleVim/Vundle.vim' " required
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-""" Vim themes via Vundle
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'chriskempson/vim-tomorrow-theme'
-Plugin 'whatyouhide/vim-gotham'
-Plugin 'dracula/vim'
-Plugin 'sickill/vim-monokai'
-Plugin 'joshdick/onedark.vim'
-Plugin 'jdkanani/vim-material-theme'
+""" Initialize Vim-plug for dependencies
+call plug#begin('~/.vim/bundle')
+""" Specify plugins
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'easymotion/vim-easymotion'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+""" Specify themes
+Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'whatyouhide/vim-gotham'
+Plug 'dracula/vim'
+Plug 'sickill/vim-monokai'
+Plug 'joshdick/onedark.vim'
+Plug 'jdkanani/vim-material-theme'
 " end initialization
-call vundle#end()             " required
-filetype plugin indent on     " required
-"filetype plugin on " use this instead to ignore plugin indent changes
+call plug#end()
 
 
 """""""""" PLUGIN SETTINGS
@@ -42,6 +35,7 @@ let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_php_checkers = ['phpcs']
 
 """ CtrlP
 " Set no max file limit
