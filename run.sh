@@ -9,6 +9,7 @@ files=(
     '.Brewfile'
     '.config/nvim/init.vim'
     '.config/nvim/ftplugin/javascript.vim'
+    '.config/nvim/ftplugin/typescript.vim'
     '.config/nvim/ftplugin/json.vim'
 )
 

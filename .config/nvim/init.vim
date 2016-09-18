@@ -9,6 +9,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'leafgarland/typescript-vim'
 """ Specify themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/vim-tomorrow-theme'
@@ -33,9 +34,10 @@ let g:syntastic_always_populate_loc_list = 0
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
-"let g:syntastic_javascript_checkers = ['eslint']
-"let g:syntastic_python_checkers = ['flake8']
-"let g:syntastic_php_checkers = ['phpcs']
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_typescript_checkers = ['tslint']
+let g:syntastic_python_checkers = ['flake8']
+let g:syntastic_php_checkers = ['phpmd']
 
 """ CtrlP
 " Set no max file limit
