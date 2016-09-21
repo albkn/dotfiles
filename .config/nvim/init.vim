@@ -38,7 +38,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_php_checkers = ['phpmd']
-
 """ CtrlP
 " Set no max file limit
 let g:ctrlp_max_files = 0

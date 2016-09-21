@@ -18,12 +18,7 @@ Simple config dotfiles for bash, vim, etc
 
     ```shell
     $ cd ~/.dotfiles
-    $ ./dotfiles.sh
+    $ ./run.sh link
     ```
-    
-4. Initialize vim and tmux plugins using Vundle and tpm respectively  
 
-    ```shell
-    $ vim +PluginInstall +qall
-    $ tmux source ~/.tmux.conf
-    ```
+And you are done :D
