@@ -11,6 +11,7 @@ files=(
     '.config/nvim/ftplugin/javascript.vim'
     '.config/nvim/ftplugin/typescript.vim'
     '.config/nvim/ftplugin/json.vim'
+    '.config/phpmd/rules.xml'
 )
 
 ensure_directory() {
