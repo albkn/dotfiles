@@ -34,6 +34,8 @@ call plug#end()
 " Auto open NERDTree only if vim is open without arguments
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Show hidden files by default
+let g:NERDTreeShowHidden = 1
 " Remap NERDTreeToggle to CTRL+\
 map <C-\> :NERDTreeToggle<CR>
 """ Syntastic
