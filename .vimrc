@@ -10,8 +10,13 @@ Plug 'kshenoy/vim-signature'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+"Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'othree/es.next.syntax.vim'
+Plug 'othree/jsdoc-syntax.vim'
+Plug 'mxw/vim-jsx'
+Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript'
 """ Specify themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/vim-tomorrow-theme'
@@ -53,6 +58,8 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 """ Fzf
 " Respects .gitignore
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+""" vim-JSX
+let g:jsx_ext_required = 0
 
 
 """""""""" VIM SETTINGS
