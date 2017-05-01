@@ -17,6 +17,7 @@ Plug 'othree/jsdoc-syntax.vim'
 Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
+Plug 'ianks/vim-tsx'
 """ Specify themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/vim-tomorrow-theme'
@@ -60,7 +61,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 """ Fzf
 " Respects .gitignore
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-""" vim-JSX
+""" vim-jsx
 let g:jsx_ext_required = 0
 
 
