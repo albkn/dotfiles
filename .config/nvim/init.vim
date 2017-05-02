@@ -108,10 +108,10 @@ set colorcolumn=80  " Put a line-length marker
 hi ColorColumn ctermbg=237 guibg=#3c3d37
 
 " Tab line settings
-hi TabLineFill ctermbg=DarkGray ctermfg=DarkGray
-hi TabLine ctermbg=DarkGray ctermfg=15 cterm=None
-hi TabLineSel ctermbg=Black ctermfg=15 cterm=None
-hi Title ctermfg=15 ctermbg=None cterm=None
+hi TabLineFill  cterm=None ctermbg=243 ctermfg=243 guibg=#767676 guifg=#767676
+hi TabLine      cterm=None ctermbg=243 ctermfg=015 guibg=#767676 guifg=#f8f8f2
+hi TabLineSel   cterm=None ctermbg=235 ctermfg=015 guibg=#262626 guifg=#f8f8f2
+hi Title        cterm=None ctermbg=235 ctermfg=015 guibg=#262626 guifg=#f8f8f2
 
 " Status line settings
 set laststatus=2    " Always on
