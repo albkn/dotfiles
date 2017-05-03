@@ -10,3 +10,9 @@ alias :q!="exit"
 
 # Use Vim as default editor
 export EDITOR=vim
+
+# Add git autocompletes
+test -f ~/.git-completion.bash && . $_
+
+# Add Tools' bin path
+export PATH="$PATH:$HOME/Tools/bin"
