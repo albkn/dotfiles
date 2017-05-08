@@ -64,6 +64,9 @@ let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 """ vim-jsx
 let g:jsx_ext_required = 0
 
+"""""""""" FILE EXTENSIONS
+autocmd BufNewFile,BufRead *.es6 set filetype=javascript
+
 
 """""""""" VIM SETTINGS
 " Default utf8 and 256 colors 
@@ -111,7 +114,7 @@ hi ColorColumn ctermbg=237 guibg=#3c3d37
 hi TabLineFill  cterm=None ctermbg=0243 ctermfg=0243 gui=None guibg=#767676 guifg=#767676
 hi TabLine      cterm=None ctermbg=0243 ctermfg=0015 gui=None guibg=#767676 guifg=#f8f8f2
 hi TabLineSel   cterm=None ctermbg=0235 ctermfg=0015 gui=None guibg=#262626 guifg=#f8f8f2
-hi Title        cterm=None ctermbg=None ctermfg=0015 gui=None guibg=None    guifg=#f8f8f2
+hi Title        cterm=None ctermbg=None ctermfg=0015 gui=None guibg=#262626 guifg=#f8f8f2
 
 " Status line settings
 set laststatus=2    " Always on
