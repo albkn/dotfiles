@@ -5,11 +5,13 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'Yggdroot/indentLine'
 "Plug 'pangloss/vim-javascript'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/es.next.syntax.vim'
@@ -49,6 +51,8 @@ let g:syntastic_typescript_checkers = ['tslint']
 let g:syntastic_python_checkers = ['flake8']
 let g:syntastic_php_checkers = ['phpmd']
 let g:syntastic_php_phpmd_post_args = "$HOME/.config/phpmd/rules.xml"
+""" Deoplete
+let g:deoplete#enable_at_startup = 1
 """ CtrlP
 " Set no max file limit
 let g:ctrlp_max_files = 0
@@ -63,6 +67,11 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 """ vim-jsx
 let g:jsx_ext_required = 0
+""" intentLine
+let g:indentLine_color_term = 237
+let g:indentLine_color_gui = '#3c3d37'
+let g:indentLine_color_tty_light = 7
+let g:indentLine_color_dark = 1
 
 
 """""""""" VIM SETTINGS
