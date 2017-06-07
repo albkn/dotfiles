@@ -6,6 +6,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/echodoc.vim'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'
@@ -21,6 +22,7 @@ Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
+Plug 'mhartington/nvim-typescript'
 """ Specify themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'chriskempson/vim-tomorrow-theme'
@@ -53,6 +55,8 @@ let g:syntastic_php_checkers = ['phpmd']
 let g:syntastic_php_phpmd_post_args = "$HOME/.config/phpmd/rules.xml"
 """ Deoplete
 let g:deoplete#enable_at_startup = 1
+""" Echodoc
+let g:echodoc_enable_at_startup = 1
 """ CtrlP
 " Set no max file limit
 let g:ctrlp_max_files = 0
@@ -156,6 +160,10 @@ set hlsearch        " Highlight all search results
 set smartcase       " Enable smart-case search
 set gdefault        " Always substitute all matches in a line
 set incsearch       " Searches for strings incrementally
+
+" Autocomplete options
+set completeopt+=menuone
+set completeopt-=preview
 
 " Turn backup off
 set nobackup
