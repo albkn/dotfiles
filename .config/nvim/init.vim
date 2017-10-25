@@ -71,6 +71,8 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 """ vim-jsx
 let g:jsx_ext_required = 0
+""" vim-json
+let g:vim_json_syntax_conceal = 0
 """ intentLine
 let g:indentLine_color_term = 237
 let g:indentLine_color_gui = '#3c3d37'
