@@ -73,6 +73,8 @@ let g:indentLine_color_gui = '#3c3d37'
 let g:indentLine_color_tty_light = 7
 let g:indentLine_color_dark = 1
 
+"""""""""" FILE EXTENSIONS
+autocmd BufNewFile,BufRead *.es6 set filetype=javascript
 
 """""""""" VIM SETTINGS
 " Default utf8 and 256 colors 

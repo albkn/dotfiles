@@ -16,3 +16,9 @@ test -f ~/.git-completion.bash && . $_
 
 # Add Tools' bin path
 export PATH="$PATH:$HOME/Tools/bin"
+
+# To turn mov to gif
+gifclip() {
+    ffmpeg -i $1 -vf scale=480:-1 -pix_fmt rgb24 -f gif - | gifsicle --optimize=3 --delay=3 > "$1.gif"
+}
+
