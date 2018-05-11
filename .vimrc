@@ -77,6 +77,13 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 """"" Fzf
 " Respects .gitignore
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
+" Action picking a file from a search list, with `enter` and `ctrl-t` swapped
+let g:fzf_action = {
+\   'enter': 'tab split',
+\   'ctrl-t': 'edit',
+\   'ctrl-x': 'split',
+\   'ctrl-v': 'vsplit',
+\}
 
 """"" vim-jsx
 let g:jsx_ext_required = 0
