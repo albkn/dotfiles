@@ -90,7 +90,7 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 """"" Fzf
 " Respects .gitignore
 let $FZF_DEFAULT_COMMAND = 'ag -g ""'
-" Action picking a file from a search list, with `enter` and `ctrl-t` swapped
+" Action triggers when picking a file, `enter` and `ctrl-t` are swapped
 let g:fzf_action = {
 \   'enter': 'tab split',
 \   'ctrl-t': 'edit',
