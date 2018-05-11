@@ -17,7 +17,12 @@ Plug 'kshenoy/vim-signature'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'prettier/vim-prettier', {
+\   'do': 'npm install',
+\   'for': ['javascript', 'typescript', 'json', 'css', 'scss']
+\}
 Plug 'Yggdroot/indentLine'
+Plug 'gcmt/taboo.vim'
 Plug 'othree/yajs.vim', { 'for': 'javascript' }
 Plug 'othree/es.next.syntax.vim'
 Plug 'othree/jsdoc-syntax.vim'
@@ -93,6 +98,16 @@ let g:fzf_action = {
 \   'ctrl-v': 'vsplit',
 \}
 
+""""" Prettier
+" Don't autoformat files
+let g:prettier#autoformat = 0
+" Run in async mode
+let g:prettier#exec_cmd_async = 1
+" Don't open quickfix on parsing error
+let g:prettier#quickfix_enabled = 0
+" Don't autofocus to quickfix on parsing error
+let g:prettier#quickfix_auto_focus = 0
+
 """"" vim-jsx
 let g:jsx_ext_required = 0
 
@@ -104,6 +119,9 @@ let g:indentLine_color_term = 237
 let g:indentLine_color_gui = '#3c3d37'
 let g:indentLine_color_tty_light = 7
 let g:indentLine_color_dark = 1
+
+""""" Taboo
+let g:taboo_tab_format = ' [%N] %f%m '
 
 
 """
@@ -160,6 +178,7 @@ set colorcolumn=80  " Put a line-length marker
 hi ColorColumn ctermbg=237 guibg=#3c3d37
 
 " Tab line settings
+set guioptions-=e " Use TERM style tabline even for GUI editor
 hi TabLineFill  cterm=None ctermbg=0243 ctermfg=0243 gui=None guibg=#767676 guifg=#767676
 hi TabLine      cterm=None ctermbg=0243 ctermfg=0015 gui=None guibg=#767676 guifg=#f8f8f2
 hi TabLineSel   cterm=None ctermbg=0235 ctermfg=0015 gui=None guibg=#262626 guifg=#f8f8f2
