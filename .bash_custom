@@ -6,10 +6,9 @@ export PS1='\[\033[0;33m\]\u@\h\[\033[0m\] in \[\033[0;32m\]\w\[\033[0m\]$(parse
 
 # Use Vim keybindings
 set -o vi
-alias :q!="exit"
 
-# Use Vim as default editor
-export EDITOR=vim
+# Use vanilla Vim as default editor
+export EDITOR="vim -u NORC"
 
 # Add git autocompletes
 test -f ~/.git-completion.bash && . $_
@@ -17,6 +16,10 @@ test -f ~/.git-completion.bash && . $_
 # Add Tools' bin path
 export PATH="$PATH:$HOME/Tools/bin"
 
+### Aliases
+alias rn=ranger
+
+### Functions
 # To turn mov to gif
 gifclip() {
     ffmpeg -i $1 -vf scale=480:-1 -pix_fmt rgb24 -f gif - | gifsicle --optimize=3 --delay=3 > "$1.gif"

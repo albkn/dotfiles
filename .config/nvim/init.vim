@@ -17,6 +17,7 @@ Plug 'kshenoy/vim-signature'
 Plug 'easymotion/vim-easymotion'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/goyo.vim'
 Plug 'prettier/vim-prettier', {
 \   'do': 'npm install',
 \   'for': ['javascript', 'typescript', 'json', 'css', 'scss']
@@ -30,7 +31,7 @@ Plug 'mxw/vim-jsx'
 Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
-Plug 'mhartington/nvim-typescript'
+Plug 'mhartington/nvim-typescript', {'do': 'sh install.sh'}
 
 """"" Themes
 Plug 'lifepillar/vim-solarized8'
@@ -43,6 +44,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'mhartington/oceanic-next'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'danilo-augusto/vim-afterglow'
+Plug 'herrbischoff/cobalt2.vim'
 
 """"" End init
 call plug#end()
