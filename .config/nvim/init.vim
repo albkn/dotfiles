@@ -32,6 +32,7 @@ Plug 'elzr/vim-json'
 Plug 'leafgarland/typescript-vim'
 Plug 'ianks/vim-tsx'
 Plug 'mhartington/nvim-typescript', {'do': 'sh install.sh'}
+Plug 'udalov/kotlin-vim'
 
 """"" Themes
 Plug 'lifepillar/vim-solarized8'
