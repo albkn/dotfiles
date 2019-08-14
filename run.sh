@@ -1,8 +1,12 @@
 #!/bin/sh
 
+source_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+
 files=(
     '.gitconfig'
     '.bash_custom'
+    '.bash_profile'
+    '.bashrc'
     '.tmux.conf'
     '.vimrc'
     '.Xresources'
@@ -24,7 +28,7 @@ ensure_directory() {
 
 try_link_file() {
     path="$1"
-    source_file="`pwd`/$path"
+    source_file="$source_dir/$path"
     target_file=~/"$path"
 
     if [ ! -e "$target_file" ]

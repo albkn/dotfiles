@@ -146,7 +146,7 @@ set t_Co=256        " Set 256 color
 " Default syntax
 syntax on
 set background=dark
-colors afterglow
+silent! colorscheme afterglow
 
 " General
 set number          " Show line numbers
