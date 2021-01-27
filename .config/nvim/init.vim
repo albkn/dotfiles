@@ -5,33 +5,63 @@
 call plug#begin('~/.vim/bundle')
 
 """"" Functional plugins
-Plug 'editorconfig/editorconfig-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-fugitive'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/echodoc.vim'
-Plug 'w0rp/ale'
+""" editor-ui git status line marker
 Plug 'airblade/vim-gitgutter'
-Plug 'kshenoy/vim-signature'
-Plug 'easymotion/vim-easymotion'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/goyo.vim'
-Plug 'prettier/vim-prettier', {
-\   'do': 'npm install',
-\   'for': ['javascript', 'typescript', 'json', 'css', 'scss']
-\}
+""" editor-ui indentation level marker
 Plug 'Yggdroot/indentLine'
+""" editor-ui improved tabline
 Plug 'gcmt/taboo.vim'
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
-Plug 'othree/es.next.syntax.vim'
+
+""" feature directory-tree sidebar
+Plug 'scrooloose/nerdtree'
+""" feature focus-mode
+Plug 'junegunn/goyo.vim'
+""" feature numerous pair-wise command shortcuts
+Plug 'tpope/vim-unimpaired'
+""" feature visual-based marking
+Plug 'kshenoy/vim-signature'
+""" feature search-and-jump navigation
+Plug 'easymotion/vim-easymotion'
+""" feature file-search
+"Plug 'ctrlpvim/ctrlp.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+""" feature git commands in ex-mode
+Plug 'tpope/vim-fugitive'
+""" feature use editor settings from .editorconfig file
+Plug 'editorconfig/editorconfig-vim'
+""" feature enable language-server integration
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
+Plug 'fannheyward/coc-xml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-json', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-css', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-tsserver', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-eslint', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-python', {'do': 'yarn install --frozen-lockfile'}
+Plug 'marlonfan/coc-phpls', {'do': 'yarn install --frozen-lockfile'}
+Plug 'yaegassy/coc-psalm', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-java', {'do': 'yarn install --frozen-lockfile'}
+Plug 'neoclide/coc-prettier', {'do': 'yarn install --frozen-lockfile'}
+
+""""" Syntax plugins
+""" js
+"Plug 'othree/yajs.vim', { 'for': 'javascript' }
+"Plug 'othree/es.next.syntax.vim'
 Plug 'othree/jsdoc-syntax.vim'
-Plug 'mxw/vim-jsx'
-Plug 'elzr/vim-json'
+Plug 'pangloss/vim-javascript'
+""" jsx
+"Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
+""" ts
 Plug 'leafgarland/typescript-vim'
-Plug 'ianks/vim-tsx'
-Plug 'mhartington/nvim-typescript', {'do': 'sh install.sh'}
+""" tsx
+"Plug 'ianks/vim-tsx'
+Plug 'peitalin/vim-jsx-typescript'
+""" json
+Plug 'elzr/vim-json'
+""" kotlin
 Plug 'udalov/kotlin-vim'
 
 """"" Themes
@@ -64,22 +94,6 @@ let g:NERDTreeShowHidden = 1
 " Remap NERDTreeToggle to CTRL+\
 map <C-\> :NERDTreeToggle<CR>
 
-""""" Ale
-let g:ale_echo_msg_error_str = 'E'
-let g:ale_echo_msg_warning_str = 'W'
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-let g:ale_linters = {
-\   'typescript': ['tslint', 'tsserver', 'typecheck'],
-\   'php': ['phpcs', 'phpmd', 'php -l'],
-\}
-let g:ale_php_phpcs_standard = 'PSR2'
-
-""""" Deoplete
-let g:deoplete#enable_at_startup = 1
-
-""""" Echodoc
-let g:echodoc_enable_at_startup = 1
-
 """"" CtrlP
 " Set no max file limit
 let g:ctrlp_max_files = 0
@@ -101,16 +115,6 @@ let g:fzf_action = {
 \   'ctrl-v': 'vsplit',
 \}
 
-""""" Prettier
-" Don't autoformat files
-let g:prettier#autoformat = 0
-" Run in async mode
-let g:prettier#exec_cmd_async = 1
-" Don't open quickfix on parsing error
-let g:prettier#quickfix_enabled = 0
-" Don't autofocus to quickfix on parsing error
-let g:prettier#quickfix_auto_focus = 0
-
 """"" vim-jsx
 let g:jsx_ext_required = 0
 
@@ -126,6 +130,33 @@ let g:indentLine_color_dark = 1
 """"" Taboo
 let g:taboo_tab_format = ' [%N] %f%m '
 
+""""" Coc
+" Use `[g` and `]g` to navigate diagnostics. Use `:CocDiagnostics` to get all
+" diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+" Use `gh` to show documentation in preview window.
+nnoremap <silent> gh :call <SID>show_documentation()<CR>
+function! s:show_documentation()
+    if (index(['vim','help'], &filetype) >= 0)
+        execute 'h '.expand('<cword>')
+    elseif (coc#rpc#ready())
+        call CocActionAsync('doHover')
+    else
+        execute '!' . &keywordprg . " " . expand('<cword>')
+    endif
+endfunction
+" Formatting selected code.
+xmap <leader>p  <Plug>(coc-format-selected)
+nmap <leader>p  <Plug>(coc-format-selected)
+
+""""" Coc-Prettier
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 """
  " FILE EXTENSIONS
