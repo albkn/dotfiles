@@ -1,0 +1,48 @@
+[user]
+    name = Albert Kurniawan
+    email = 6895356+morcerf@users.noreply.github.com
+[core]
+    editor = vim
+[alias]
+    st = status
+    br = branch
+    co = checkout
+    com = checkout master
+    cob = checkout -b
+    cot = checkout -t
+    co- = checkout -- .
+    dno = diff --name-only
+    pom = pull origin master
+    rbm = rebase master
+    lol = log --oneline
+    long = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+[color "branch"]
+    current = green reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold
+    old = red
+    new = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+[color "grep"]
+    linenumber = yellow bold
+    match = red
+    filename = magenta bold
+[status]
+	showUntrackedFiles = all
+[push]
+    default = current
+[filter "lfs"]
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+    clean = git-lfs clean -- %f
