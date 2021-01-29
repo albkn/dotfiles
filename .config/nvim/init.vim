@@ -13,7 +13,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'gcmt/taboo.vim'
 
 """ feature directory-tree sidebar
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
+""" feature stronger netrw file browser integration
+Plug 'tpope/vim-vinegar'
 """ feature focus-mode
 Plug 'junegunn/goyo.vim'
 """ feature numerous pair-wise command shortcuts
@@ -85,24 +87,32 @@ call plug#end()
  " PLUGIN SETTINGS
  ""
 
+""""" netrw
+" Use tree-style list
+let g:netrw_liststyle = 3
+" Remove top banner
+let g:netrw_banner = 0
+" Open selected file in the window of the dir browser
+let g:netrw_browse_split = 0
+
 """"" NERDTree
-" Auto open NERDTree only if vim is open without arguments
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" Show hidden files by default
-let g:NERDTreeShowHidden = 1
-" Remap NERDTreeToggle to CTRL+\
-map <C-\> :NERDTreeToggle<CR>
+"" Auto open NERDTree only if vim is open without arguments
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"" Show hidden files by default
+"let g:NERDTreeShowHidden = 1
+"" Remap NERDTreeToggle to CTRL+\
+"map <C-\> :NERDTreeToggle<CR>
 
 """"" CtrlP
-" Set no max file limit
-let g:ctrlp_max_files = 0
-" Search from current dir, instead of project root
-let g:ctrlp_working_path_mode = 0
-" Ignore files in .gitignore
-"let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
-" Use Ag for faster search
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+"" Set no max file limit
+"let g:ctrlp_max_files = 0
+"" Search from current dir, instead of project root
+"let g:ctrlp_working_path_mode = 0
+"" Ignore files in .gitignore
+""let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+"" Use Ag for faster search
+"let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 """"" Fzf
 " Respects .gitignore

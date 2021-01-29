@@ -6,10 +6,11 @@ call plug#begin('~/.vim/bundle')
 
 """"" Functional plugins
 Plug 'editorconfig/editorconfig-vim'
-Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-vinegar'
 Plug 'airblade/vim-gitgutter'
 Plug 'kshenoy/vim-signature'
 Plug 'easymotion/vim-easymotion'
@@ -51,14 +52,22 @@ call plug#end()
  " PLUGIN SETTINGS
  ""
 
+""""" netrw
+" Use tree-style list
+let g:netrw_liststyle = 3
+" Remove top banner
+let g:netrw_banner = 0
+" Open selected file in the window of the dir browser
+let g:netrw_browse_split = 0
+
 """"" NERDTree
-" Auto open NERDTree only if vim is open without arguments
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" Show hidden files by default
-let g:NERDTreeShowHidden = 1
-" Remap NERDTreeToggle to CTRL+\
-map <C-\> :NERDTreeToggle<CR>
+"" Auto open NERDTree only if vim is open without arguments
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"" Show hidden files by default
+"let g:NERDTreeShowHidden = 1
+"" Remap NERDTreeToggle to CTRL+\
+"map <C-\> :NERDTreeToggle<CR>
 
 """"" Syntastic
 let g:syntastic_always_populate_loc_list = 0
