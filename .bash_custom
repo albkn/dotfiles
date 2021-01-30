@@ -1,27 +1,32 @@
-# Set prompt style
-parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
-}
-export PS1='\[\033[0;33m\]\u@\h\[\033[0m\] in \[\033[0;32m\]\w\[\033[0m\]$(parse_git_branch) \$ '
-
-# Use Vim keybindings
-set -o vi
-
+### Env vars
+# Use english as default locale
+export LC_ALL=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
 # Use vanilla Vim as default editor
 export EDITOR="vim -u NORC"
-
-# Add git autocompletes
-test -f ~/.git-completion.bash && . $_
-
-# Add Tools' bin path
-export PATH="$PATH:$HOME/Tools/bin"
+# Add binaries
+export PATH="$PATH:$HOME/.local/bin"
+# Shell prompt style
+export PS1='\[\033[0;33m\]\u@\h\[\033[0m\] in \[\033[0;32m\]\w\[\033[0m\]$(shell_prompt_git_branch) \$ '
 
 ### Aliases
-alias rn=ranger
+alias tmux="tmux -2"
+alias rn="ranger"
+alias nr="npm run"
 
 ### Functions
+# Get name of current git branch, used in shell prompt
+shell_prompt_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
 # To turn mov to gif
 gifclip() {
     ffmpeg -i $1 -vf scale=480:-1 -pix_fmt rgb24 -f gif - | gifsicle --optimize=3 --delay=3 > "$1.gif"
 }
 
+### Others
+# Add git autocompletes
+test -f ~/.git-completion.bash && . $_
+# Use Vim keybindings
+set -o vi
