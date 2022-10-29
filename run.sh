@@ -10,7 +10,6 @@ files=(
     '.tmux.conf'
     '.vimrc'
     '.Xresources'
-    '.Brewfile'
     '.config/nvim/init.vim'
     '.config/nvim/ftplugin/javascript.vim'
     '.config/nvim/ftplugin/typescript.vim'

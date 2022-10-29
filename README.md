@@ -11,7 +11,7 @@ Simple config dotfiles for bash, vim, etc
 2. Clone from the repo to `.dotfiles` diretory  
 
     ```shell
-    $ git clone https://github.com/morcerf/dotfiles .dotfiles
+    $ git clone https://github.com/albkn/dotfiles .dotfiles
     ```
     
 3. Go into the directory and run the script
