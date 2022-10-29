@@ -33,7 +33,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'editorconfig/editorconfig-vim'
 """ feature enable language-server integration
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'neoclide/coc-highlight', {'do': 'yarn install --frozen-lockfile'}
 Plug 'fannheyward/coc-xml', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-html', {'do': 'yarn install --frozen-lockfile'}
 Plug 'neoclide/coc-yaml', {'do': 'yarn install --frozen-lockfile'}
@@ -59,8 +58,8 @@ Plug 'MaxMEllon/vim-jsx-pretty'
 """ ts
 Plug 'leafgarland/typescript-vim'
 """ tsx
-"Plug 'ianks/vim-tsx'
-Plug 'peitalin/vim-jsx-typescript'
+Plug 'ianks/vim-tsx'
+"Plug 'peitalin/vim-jsx-typescript'
 """ json
 Plug 'elzr/vim-json'
 """ kotlin
@@ -197,6 +196,7 @@ set wildmenu        " Show visual autocomplete for command menu
 set lazyredraw      " Redraw screen only when need to
 set updatetime=1000 " Lengths use by some plugins before triggering update
 set undolevels=500  " Number of undo levels
+set signcolumn=yes  " Always show so that diagnostics do not cause text shift
 
 " Indentations
 set smarttab        " Enable smart-tabs

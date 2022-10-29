@@ -1,19 +1,19 @@
 [user]
     name = Albert Kurniawan
-    email = 6895356+morcerf@users.noreply.github.com
+    email = kurniawan.albert19@gmail.com
 [core]
     editor = vim
 [alias]
     st = status
     br = branch
     co = checkout
-    com = checkout master
+    com = checkout main
     cob = checkout -b
     cot = checkout -t
     co- = checkout -- .
     dno = diff --name-only
-    pom = pull origin master
-    rbm = rebase master
+    pom = pull origin main
+    rbm = rebase main
     lol = log --oneline
     long = log --graph --abbrev-commit --decorate --date=relative --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)'
 [color]
@@ -38,7 +38,7 @@
     match = red
     filename = magenta bold
 [status]
-	showUntrackedFiles = all
+  showUntrackedFiles = all
 [push]
     default = current
 [filter "lfs"]
@@ -46,3 +46,4 @@
     process = git-lfs filter-process
     required = true
     clean = git-lfs clean -- %f
+

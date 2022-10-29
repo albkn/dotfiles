@@ -4,7 +4,7 @@ source_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 
 files=(
     '.gitconfig'
-    '.bash_custom'
+    '.bash_extension'
     '.bash_profile'
     '.bashrc'
     '.tmux.conf'
@@ -48,6 +48,17 @@ try_unlink_file() {
     fi
 }
 
+try_reverse_copy_file() {
+    path="$1"
+    source_file="$source_dir/$path"
+    target_file=~/"$path"
+
+    if [ -e "$target_file" ] && [ ! -L "$target_file" ]
+    then
+        cp "$target_file" "$source_file" && echo "$path reverse copied"
+    fi
+}
+
 if [ "$1" = "link" ]; then
     for file in ${files[@]}
     do
@@ -57,5 +68,10 @@ elif [ "$1" = "unlink" ]; then
     for file in ${files[@]}
     do
         try_unlink_file "$file"
+    done
+elif [ "$1" = "reverse-copy" ]; then
+    for file in ${files[@]}
+    do
+        try_reverse_copy_file "$file"
     done
 fi

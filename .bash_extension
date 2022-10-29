@@ -1,11 +1,11 @@
-### Env vars
+### ENV vars
 # Use english as default locale
 export LC_ALL=en_US.UTF-8
 export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 # Use vanilla Vim as default editor
 export EDITOR="vim -u NORC"
-# Add binaries
+# Add binaries (usually used by user-local pip)
 export PATH="$PATH:$HOME/.local/bin"
 # Shell prompt style
 export PS1='\[\033[0;33m\]\u@\h\[\033[0m\] in \[\033[0;32m\]\w\[\033[0m\]$(shell_prompt_git_branch) \$ '
